@@ -10,8 +10,8 @@ const App: React.FC = () => {
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-16 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
                     <div className="max-w-5xl mx-auto">
-                        <div className="max-w-4xl mx-auto mb-12 bg-lime-400 text-black p-6 rounded-lg shadow-lg shadow-lime-400/20">
-                            <p className="font-bold uppercase tracking-wide text-center text-xl md:text-2xl py-2">
+                        <div className="max-w-4xl mx-auto mb-12 bg-red-600 text-white p-6 rounded-lg shadow-lg shadow-red-600/30">
+                            <p className="font-bold uppercase tracking-wide text-center text-lg md:text-xl py-2">
                                 Aviso: O que impede a maioria das pessoas em Camaquã de ter a casa dos sonhos não é dinheiro. É a informação que está nesta página.
                             </p>
                         </div>
@@ -44,11 +44,11 @@ const App: React.FC = () => {
                             </div>
                         </div>
                         <div className="mt-16">
-                            <figure className="max-w-3xl mx-auto bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
+                            <figure className="max-w-md mx-auto bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                 <img 
-                                    src="https://picsum.photos/seed/croqui/1200/800" 
+                                    src="https://picsum.photos/seed/croqui/900/1600" 
                                     alt="Exemplo de Croqui de Soluções entregue no Diagnóstico Estratégico" 
-                                    className="rounded-md w-full"
+                                    className="rounded-md w-full aspect-[9/16] object-cover"
                                 />
                                 <figcaption className="text-sm text-gray-500 mt-3 italic">
                                     Exemplo real do Croqui de Soluções que você recebe em PDF.
@@ -110,9 +110,9 @@ const App: React.FC = () => {
                             <div className="grid md:grid-cols-2 gap-8 text-left">
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://picsum.photos/seed/render3d/800/600" 
+                                        src="https://picsum.photos/seed/render3d/900/1600" 
                                         alt="Exemplo de Render 3D" 
-                                        className="rounded-md w-full aspect-video object-cover"
+                                        className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
                                     <figcaption className="text-sm text-gray-500 mt-3 italic text-center">
                                         <strong>Imagem 3D (Render):</strong> Visualize seu espaço antes de começar.
@@ -120,9 +120,9 @@ const App: React.FC = () => {
                                 </figure>
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://picsum.photos/seed/desenhotecnico/800/600" 
+                                        src="https://picsum.photos/seed/desenhotecnico/900/1600" 
                                         alt="Exemplo de Desenho Técnico" 
-                                        className="rounded-md w-full aspect-video object-cover"
+                                        className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
                                     <figcaption className="text-sm text-gray-500 mt-3 italic text-center">
                                         <strong>Desenho Técnico:</strong> Precisão para a execução perfeita do projeto.
@@ -143,14 +143,14 @@ const App: React.FC = () => {
                             <ProjectCard
                                 title="Sala de Estar da Família Souza"
                                 description="Investimento Total de R$ 850. Usamos a solução 'Guia de Compras' com foco em pintura e novo layout."
-                                beforeImage="https://picsum.photos/seed/salaantes/800/600"
-                                afterImage="https://picsum.photos/seed/saladepois/800/600"
+                                beforeImage="https://picsum.photos/seed/salaantes/900/1600"
+                                afterImage="https://picsum.photos/seed/saladepois/900/1600"
                             />
                             <ProjectCard
                                 title="Quarto da Mariana"
                                 description="Investimento Total de R$ 1.300. Usamos a solução 'Pra Construir sem Erro' com foco em marcenaria inteligente."
-                                beforeImage="https://picsum.photos/seed/quartoantes/800/600"
-                                afterImage="https://picsum.photos/seed/quartodepois/800/600"
+                                beforeImage="https://picsum.photos/seed/quartoantes/900/1600"
+                                afterImage="https://picsum.photos/seed/quartodepois/900/1600"
                             />
                         </div>
                     </div>
@@ -165,11 +165,11 @@ const App: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                              <figure>
-                                <img src="https://picsum.photos/seed/loja/500/700" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[3/4] object-cover" />
+                                <img src="https://picsum.photos/seed/loja/900/1600" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Aprendendo com os melhores para entregar o mais inteligente para você.</figcaption>
                             </figure>
                              <figure>
-                                <img src="https://picsum.photos/seed/equipe/500/700" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[3/4] object-cover" />
+                                <img src="https://picsum.photos/seed/equipe/900/1600" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Anos de experiência em equipe, agora focados em um único objetivo: o seu sonho.</figcaption>
                             </figure>
                         </div>

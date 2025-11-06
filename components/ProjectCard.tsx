@@ -11,10 +11,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, be
     return (
         <div className="group">
             <div className="relative rounded-lg overflow-hidden border-2 border-gray-800 group-hover:border-lime-400/50 transition-colors duration-300">
-                <img src={afterImage} alt={`Depois - ${title}`} className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={afterImage} alt={`Depois - ${title}`} className="w-full aspect-[9/16] object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                     <div className="relative">
-                         <img src={beforeImage} alt={`Antes - ${title}`} className="w-32 h-20 object-cover rounded-md border-2 border-black/50" />
+                         <img src={beforeImage} alt={`Antes - ${title}`} className="w-32 aspect-[9/16] object-cover rounded-md border-2 border-black/50" />
                          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                             <p className="text-white font-bold text-sm tracking-widest uppercase">Antes</p>
                          </div>
