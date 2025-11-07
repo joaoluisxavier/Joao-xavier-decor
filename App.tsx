@@ -46,7 +46,7 @@ const App: React.FC = () => {
                         <div className="mt-16">
                             <figure className="max-w-md mx-auto bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                 <img 
-                                    src="https://picsum.photos/seed/croqui/900/1600" 
+                                    src="https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=1887&auto=format&fit=crop" 
                                     alt="Exemplo de Croqui de Soluções entregue no Diagnóstico Estratégico" 
                                     className="rounded-md w-full aspect-[9/16] object-cover"
                                 />
@@ -96,7 +96,7 @@ const App: React.FC = () => {
                             <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://picsum.photos/seed/render3d/900/1600" 
+                                        src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=2070&auto=format&fit=crop" 
                                         alt="Exemplo de Render 3D" 
                                         className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
@@ -106,7 +106,7 @@ const App: React.FC = () => {
                                 </figure>
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://picsum.photos/seed/desenhotecnico/900/1600" 
+                                        src="https://i.ibb.co/28V7pnv/planta-exemplo.jpg" 
                                         alt="Exemplo de Desenho Técnico" 
                                         className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
@@ -129,14 +129,12 @@ const App: React.FC = () => {
                             <ProjectCard
                                 title="Sala de Estar da Família Souza"
                                 description="Investimento Total de R$ 350. Usamos a solução 'Guia de Compras' com foco em pintura e novo layout."
-                                beforeImage="https://picsum.photos/seed/salaantes/900/1600"
-                                afterImage="https://picsum.photos/seed/saladepois/900/1600"
+                                afterImage="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop"
                             />
                             <ProjectCard
                                 title="Quarto da Mariana"
                                 description="A cliente estava prestes a investir 18 mil reais. Nossa análise e projeto inteligente reduziram o custo final para 7 mil, sem abrir mão da qualidade."
-                                beforeImage="https://picsum.photos/seed/quartoantes/900/1600"
-                                afterImage="https://picsum.photos/seed/quartodepois/900/1600"
+                                afterImage="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1932&auto=format&fit=crop"
                             />
                         </div>
                     </div>
@@ -151,11 +149,11 @@ const App: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                              <figure>
-                                <img src="https://picsum.photos/seed/loja/900/1600" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
+                                <img src="https://br.pinterest.com/pin/432416001742769554/" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Aprendendo com os melhores para entregar o mais inteligente para você.</figcaption>
                             </figure>
                              <figure>
-                                <img src="https://picsum.photos/seed/equipe/900/1600" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[9/16] object-cover" />
+                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Anos de experiência em equipe, agora focados em um único objetivo: o seu sonho.</figcaption>
                             </figure>
                         </div>
