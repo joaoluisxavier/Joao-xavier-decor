@@ -71,7 +71,7 @@ const App: React.FC = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-2xl md:text-4xl font-bold text-white">Um Plano de Ação para Cada Necessidade</h2>
-                            <p className="mt-4 text-base md:text-lg text-gray-400 max-w-3xl mx-auto">Veja abaixo as soluções que ofereço:</p>
+                            <p className="mt-6 text-xl md:text-2xl font-bold text-lime-400 max-w-3xl mx-auto">Veja abaixo mais soluções que ofereço:</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
                             <SolutionCard
