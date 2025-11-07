@@ -129,7 +129,7 @@ const App: React.FC = () => {
                             <ProjectCard
                                 title="Sala de Estar da Família Souza"
                                 description="Investimento Total de R$ 350. Usamos a solução 'Guia de Compras' com foco em pintura e novo layout."
-                                afterImage="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop"
+                                afterImage="https://i.pinimg.com/736x/0b/c4/07/0bc4079ff6601d37198f14a1caa83fb0.jpg"
                             />
                             <ProjectCard
                                 title="Quarto da Mariana"
@@ -149,7 +149,7 @@ const App: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                              <figure>
-                                <img src="https://br.pinterest.com/pin/432416001742769554/" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
+                                <img src="https://i.pinimg.com/1200x/17/88/7e/17887e1e30388611a634f8d21664515d.jpg" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Aprendendo com os melhores para entregar o mais inteligente para você.</figcaption>
                             </figure>
                              <figure>
