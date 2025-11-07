@@ -106,7 +106,7 @@ const App: React.FC = () => {
                                 </figure>
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://i.ibb.co/28V7pnv/planta-exemplo.jpg" 
+                                        src="https://i.pinimg.com/736x/d4/bd/f8/d4bdf8e8be1f47deae946ac7a9bb5d9e.jpg" 
                                         alt="Exemplo de Desenho Técnico" 
                                         className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
@@ -134,7 +134,7 @@ const App: React.FC = () => {
                             <ProjectCard
                                 title="Quarto da Mariana"
                                 description="A cliente estava prestes a investir 18 mil reais. Nossa análise e projeto inteligente reduziram o custo final para 7 mil, sem abrir mão da qualidade."
-                                afterImage="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1932&auto=format&fit=crop"
+                                afterImage="https://i.pinimg.com/736x/35/b8/08/35b808fb92aad6593961d191667df9bd.jpg"
                             />
                         </div>
                     </div>
