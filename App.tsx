@@ -225,18 +225,18 @@ const App: React.FC = () => {
                                     <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
                                 </button>
                             </form>
-                             <p className="text-center mt-6 text-sm">
-                                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-lime-400 hover:text-lime-300 transition inline-flex items-center gap-2 justify-center group">
-                                    <WhatsAppIcon className="w-5 h-5" />
-                                    <span className="group-hover:underline">Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
+                             <div className="text-center mt-6">
+                                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
+                                    <MessageSquareIcon className="w-5 h-5" />
+                                    <span>Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
                                 </a>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
             <footer className="text-center py-8 px-6 border-t border-gray-800">
-                <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Planejamento Residencial. Todos os direitos reservados.</p>
+                <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} João Xavier Decor. Todos os direitos reservados.</p>
             </footer>
         </div>
     );
