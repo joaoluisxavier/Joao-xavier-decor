@@ -10,7 +10,7 @@ interface SolutionCardProps {
 export const SolutionCard: React.FC<SolutionCardProps> = ({ title, description, features }) => {
     return (
         <div className="bg-gradient-to-br from-zinc-900 to-black border border-lime-400/30 rounded-lg p-8 h-full flex flex-col transition-all duration-300 hover:border-lime-300 hover:shadow-2xl hover:shadow-lime-400/20 hover:scale-[1.03]">
-            <h3 className="text-2xl font-bold text-lime-400">{title}</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-lime-400">{title}</h3>
             <p className="mt-2 text-gray-400 flex-grow">{description}</p>
             <div className="mt-8 border-t border-gray-700 pt-6 space-y-4">
                 <p className="font-bold text-white">O que você recebe:</p>
