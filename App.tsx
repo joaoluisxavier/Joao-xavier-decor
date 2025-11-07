@@ -128,7 +128,7 @@ const App: React.FC = () => {
                         <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
                             <ProjectCard
                                 title="Sala de Estar da Família Souza"
-                                description="Investimento Total de R$ 850. Usamos a solução 'Guia de Compras' com foco em pintura e novo layout."
+                                description="Investimento Total de R$ 350. Usamos a solução 'Guia de Compras' com foco em pintura e novo layout."
                                 beforeImage="https://picsum.photos/seed/salaantes/900/1600"
                                 afterImage="https://picsum.photos/seed/saladepois/900/1600"
                             />
