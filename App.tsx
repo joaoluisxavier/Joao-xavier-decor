@@ -46,7 +46,7 @@ const App: React.FC = () => {
                         <div className="mt-16">
                             <figure className="max-w-md mx-auto bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=1887&auto=format&fit=crop" 
+                                    src="https://i.pinimg.com/1200x/47/c3/45/47c345775431df3980808adf6a58a306.jpg" 
                                     alt="Exemplo de Croqui de Soluções entregue no Diagnóstico Estratégico" 
                                     className="rounded-md w-full aspect-[9/16] object-cover"
                                 />
