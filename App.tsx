@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
@@ -96,7 +97,7 @@ const App: React.FC = () => {
                             <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
                                 <figure className="bg-zinc-900 p-4 border border-gray-800 rounded-lg shadow-lg">
                                     <img 
-                                        src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=2070&auto=format&fit=crop" 
+                                        src="https://i.pinimg.com/1200x/c4/db/95/c4db952214ac483673b38740b41650d8.jpg" 
                                         alt="Exemplo de Render 3D" 
                                         className="rounded-md w-full aspect-[9/16] object-cover"
                                     />
@@ -149,11 +150,11 @@ const App: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                              <figure>
-                                <img src="https://i.pinimg.com/1200x/17/88/7e/17887e1e30388611a634f8d21664515d.jpg" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
+                                <img src="https://i.pinimg.com/736x/1d/ef/91/1def912771d0ed5e56bcb3f634f7001c.jpg" alt="Loja de luxo em Santa Catarina" className="rounded-lg shadow-lg filter grayscale aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Aprendendo com os melhores para entregar o mais inteligente para você.</figcaption>
                             </figure>
                              <figure>
-                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[9/16] object-cover" />
+                                <img src="https://i.pinimg.com/736x/67/a1/3a/67a13a8537c4dd7c21411c2f96638b1e.jpg" alt="Foto com a equipe" className="rounded-lg shadow-lg aspect-[9/16] object-cover" />
                                 <figcaption className="text-center mt-3 text-sm text-gray-500 italic">Anos de experiência em equipe, agora focados em um único objetivo: o seu sonho.</figcaption>
                             </figure>
                         </div>
