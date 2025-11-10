@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
@@ -133,7 +132,7 @@ const App: React.FC = () => {
                                 afterImage="https://i.pinimg.com/736x/0b/c4/07/0bc4079ff6601d37198f14a1caa83fb0.jpg"
                             />
                             <ProjectCard
-                                title="Quarto da Mariana"
+                                title="Cozinha Mariana"
                                 description="A cliente estava prestes a investir 18 mil reais. Nossa análise e projeto inteligente reduziram o custo final para 7 mil, sem abrir mão da qualidade."
                                 afterImage="https://i.pinimg.com/736x/35/b8/08/35b808fb92aad6593961d191667df9bd.jpg"
                             />
@@ -225,7 +224,7 @@ const App: React.FC = () => {
                                 </button>
                             </form>
                              <div className="text-center mt-6">
-                                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
+                                <a href="https://wa.me/5592427079" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
                                     <MessageSquareIcon className="w-5 h-5" />
                                     <span>Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
                                 </a>
