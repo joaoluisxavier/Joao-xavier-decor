@@ -2,10 +2,12 @@ import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
+import MetaPixel from './components/MetaPixel';
 
 const App: React.FC = () => {
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
+            <MetaPixel />
             <main>
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-12 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
