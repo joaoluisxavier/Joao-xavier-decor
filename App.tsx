@@ -1,36 +1,9 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
-import { ShieldIcon, HomeIcon, FileTextIcon, MapIcon, ClockIcon, UserIcon, WhatsAppIcon, MapPinIcon, MessageSquareIcon, LightbulbIcon, DollarSignIcon } from './components/Icons';
+import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
 
 const App: React.FC = () => {
-    const [nome, setNome] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');
-    const [cidade, setCidade] = useState('');
-    const [bairro, setBairro] = useState('');
-    const [ambiente, setAmbiente] = useState('');
-
-    const handleFormSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-
-        const seuNumeroWhatsapp = '555192427079';
-
-        const mensagem = `Olá! Gostaria de agendar meu diagnóstico.
------------------------------------
-*Nome:* ${nome}
-*WhatsApp:* ${whatsapp}
-*Cidade:* ${cidade}
-*Bairro:* ${bairro}
-*Ambiente que mais incomoda:* ${ambiente}
------------------------------------
-Aguardo o contato!`;
-
-        const linkWhatsapp = `https://wa.me/${seuNumeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
-        window.open(linkWhatsapp, '_blank');
-    };
-
-
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
             <main>
@@ -222,40 +195,15 @@ Aguardo o contato!`;
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
-                            <form className="space-y-6" onSubmit={handleFormSubmit}>
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="relative">
-                                        <UserIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" placeholder="Seu nome" value={nome} onChange={(e) => setNome(e.target.value)} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <WhatsAppIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="tel" placeholder="Seu melhor WhatsApp" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <MapPinIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" placeholder="Cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <HomeIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" placeholder="Bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                </div>
-                                 <div className="relative">
-                                    <MessageSquareIcon className="w-5 h-5 text-gray-500 absolute top-5 left-4" />
-                                    <textarea placeholder="Qual ambiente da sua casa mais te incomoda hoje?" rows={3} value={ambiente} onChange={(e) => setAmbiente(e.target.value)} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition"></textarea>
-                                </div>
-                                <button type="submit" className="w-full bg-lime-400 text-black font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
-                                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                    <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
-                                </button>
-                            </form>
-                             <div className="text-center mt-6">
-                                <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
-                                    <MessageSquareIcon className="w-5 h-5" />
-                                    <span>Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
-                                </a>
-                            </div>
+                             <a 
+                                href="https://submit.jotform.com/253156169630054" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
+                            >
+                                <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                                <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
+                            </a>
                         </div>
                     </div>
                 </section>
