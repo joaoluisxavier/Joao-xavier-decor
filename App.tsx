@@ -1,13 +1,58 @@
-import React from 'react';
+// src/App.tsx
+
+import React, { useEffect } from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
-import MetaPixel from './components/MetaPixel';
+
+// --- INÍCIO DO CÓDIGO DO PIXEL ---
+// Estende a interface da janela para incluir o fbq para o TypeScript
+declare global {
+    interface Window {
+        fbq: any;
+        _fbq: any;
+    }
+}
+
+const PIXEL_ID = '1912501926344949'; // SEU ID DO PIXEL joaodecorOFICIAL
+
+const useMetaPixel = () => {
+  useEffect(() => {
+    // Evita que o script seja adicionado múltiplas vezes
+    if (window.fbq) return;
+
+    (function(f: any, b: Document, e: string, v: string, n?: any, t?: any, s?: any) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode!.insertBefore(t, s);
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    window.fbq('init', PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }, []); // O array vazio [] garante que este código rode apenas uma vez
+};
+// --- FIM DO CÓDIGO DO PIXEL ---
+
 
 const App: React.FC = () => {
+    
+    useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
+
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
-            <MetaPixel />
+            {/* O componente do Pixel foi removido daqui e agora é chamado pela função 'useMetaPixel()' acima */}
             <main>
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-12 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
