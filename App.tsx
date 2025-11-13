@@ -5,6 +5,7 @@ import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
 import JotformPage from './components/JotformPage';
+import ThanksPage from './components/ThanksPage'; // Importa a nova página
 
 // --- INÍCIO DO CÓDIGO DO PIXEL ---
 // Estende a interface da janela para incluir o fbq para o TypeScript
@@ -46,19 +47,33 @@ const useMetaPixel = () => {
 };
 // --- FIM DO CÓDIGO DO PIXEL ---
 
+type Page = 'main' | 'form' | 'thanks';
 
 const App: React.FC = () => {
-    const [showForm, setShowForm] = useState(false);
+    const [currentPage, setCurrentPage] = useState<Page>('main');
     
     useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
 
-    if (showForm) {
-        return <JotformPage onBack={() => setShowForm(false)} />;
+    useEffect(() => {
+        // Detecta a página a ser exibida a partir do parâmetro na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        if (page === 'thanks') {
+            setCurrentPage('thanks');
+        }
+    }, []);
+
+    if (currentPage === 'form') {
+        return <JotformPage onBack={() => setCurrentPage('main')} />;
     }
+
+    if (currentPage === 'thanks') {
+        return <ThanksPage onBack={() => setCurrentPage('main')} />;
+    }
+
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
-            {/* O componente do Pixel foi removido daqui e agora é chamado pela função 'useMetaPixel()' acima */}
             <main>
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-12 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
@@ -249,7 +264,7 @@ const App: React.FC = () => {
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
                              <button
-                                onClick={() => setShowForm(true)}
+                                onClick={() => setCurrentPage('form')}
                                 className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
                             >
                                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
