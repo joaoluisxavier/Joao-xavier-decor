@@ -1,8 +1,15 @@
-
 import React, { useEffect } from 'react';
+
+// Declare fbq for TypeScript
+declare const fbq: (type: string, event: string, options?: object) => void;
 
 const Cadastro: React.FC = () => {
   useEffect(() => {
+    // Facebook Pixel PageView Event
+    if (typeof fbq === 'function') {
+      fbq('track', 'PageView');
+    }
+      
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = "https://form.jotform.com/jsform/253156169630054";

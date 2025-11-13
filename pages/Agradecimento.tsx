@@ -1,8 +1,17 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CheckIcon } from '../components/Icons';
 
+// Declare fbq for TypeScript
+declare const fbq: (type: string, event: string, options?: object) => void;
+
 const Agradecimento: React.FC = () => {
+  useEffect(() => {
+    if (typeof fbq === 'function') {
+      fbq('track', 'PageView');
+      fbq('track', 'Lead');
+    }
+  }, []);
+
   return (
     <div className="bg-zinc-950 text-gray-200 min-h-screen flex items-center justify-center text-center px-6">
       <div className="max-w-md mx-auto">

@@ -1,11 +1,13 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { ShieldIcon, HomeIcon, FileTextIcon, MapIcon, ClockIcon, UserIcon, WhatsAppIcon, MapPinIcon, MessageSquareIcon, LightbulbIcon, DollarSignIcon } from './components/Icons';
 import Obrigado from './pages/Obrigado';
 import Cadastro from './pages/Cadastro';
 import Agradecimento from './pages/Agradecimento';
+
+// Declare fbq for TypeScript
+declare const fbq: (type: string, event: string, options?: object) => void;
 
 const App: React.FC = () => {
     if (typeof window !== 'undefined') {
@@ -20,6 +22,12 @@ const App: React.FC = () => {
             return <Agradecimento />;
         }
     }
+
+    useEffect(() => {
+        if (typeof fbq === 'function') {
+            fbq('track', 'PageView');
+        }
+    }, []);
 
 
     return (
