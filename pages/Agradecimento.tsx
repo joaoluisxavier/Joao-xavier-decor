@@ -6,7 +6,10 @@ declare const fbq: (type: string, event: string, options?: object) => void;
 
 const Agradecimento: React.FC = () => {
   useEffect(() => {
+    console.log('Agradecimento.tsx useEffect EXECUTADO.'); // Log 5
+
     if (typeof fbq === 'function') {
+      console.log('DISPARANDO PageView e Lead para a página de Agradecimento...'); // Log 6
       fbq('track', 'PageView');
       fbq('track', 'Lead');
     }

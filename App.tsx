@@ -24,9 +24,12 @@ const App: React.FC = () => {
     }
 
     useEffect(() => {
+        console.log('App.tsx useEffect EXECUTADO. Pathname:', window.location.pathname); // Log 1
+
         // Este PageView só deve ser disparado se estivermos na landing page.
         if (typeof window !== 'undefined' && window.location.pathname !== '/cadastro' && window.location.pathname !== '/agradecimento') {
             if (typeof fbq === 'function') {
+                console.log('DISPARANDO PageView para a Landing Page...'); // Log 2
                 fbq('track', 'PageView');
             }
         }

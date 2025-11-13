@@ -5,8 +5,10 @@ declare const fbq: (type: string, event: string, options?: object) => void;
 
 const Cadastro: React.FC = () => {
   useEffect(() => {
-    // Facebook Pixel PageView Event
+    console.log('Cadastro.tsx useEffect EXECUTADO.'); // Log 3
+
     if (typeof fbq === 'function') {
+      console.log('DISPARANDO PageView para a página de Cadastro...'); // Log 4
       fbq('track', 'PageView');
     }
       
