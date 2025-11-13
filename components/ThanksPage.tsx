@@ -19,11 +19,6 @@ const ThanksPage: React.FC<ThanksPageProps> = ({ onBack }) => {
             <p className="text-gray-300 mt-2">
                 Em breve, nossa equipe entrará em contato para confirmar os detalhes do seu <strong>Diagnóstico Estratégico</strong>.
             </p>
-            <div className="mt-8">
-                <p className="text-sm text-gray-500">
-                    <span className="font-bold">Nota:</span> Para que esta página funcione, configure a "Página de Agradecimento" no seu formulário Jotform para redirecionar para a URL da sua landing page com o parâmetro `?page=thanks` no final.
-                </p>
-            </div>
             <button 
                 onClick={onBack}
                 className="mt-10 bg-lime-400 hover:bg-lime-300 text-black font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
