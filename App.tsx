@@ -24,8 +24,11 @@ const App: React.FC = () => {
     }
 
     useEffect(() => {
-        if (typeof fbq === 'function') {
-            fbq('track', 'PageView');
+        // Este PageView só deve ser disparado se estivermos na landing page.
+        if (typeof window !== 'undefined' && window.location.pathname !== '/cadastro' && window.location.pathname !== '/agradecimento') {
+            if (typeof fbq === 'function') {
+                fbq('track', 'PageView');
+            }
         }
     }, []);
 
