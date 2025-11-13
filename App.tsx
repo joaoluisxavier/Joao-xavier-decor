@@ -15,7 +15,7 @@ declare global {
     }
 }
 
-const PIXEL_ID = '1912501926534949'; // SEU ID DO PIXEL joaodecorOFICIAL (ATUALIZADO)
+const PIXEL_ID = '1912501926344949'; // SEU ID DO PIXEL joaodecorOFICIAL
 
 const useMetaPixel = () => {
   useEffect(() => {
@@ -51,16 +51,6 @@ const App: React.FC = () => {
     const [showForm, setShowForm] = useState(false);
     
     useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
-
-    // Efeito para rastrear a conversão de 'Lead' na página de agradecimento
-    useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('page') === 'thanks') {
-            if (window.fbq) {
-                window.fbq('track', 'Lead');
-            }
-        }
-    }, []); // Roda apenas uma vez quando o componente é montado
 
     if (showForm) {
         return <JotformPage onBack={() => setShowForm(false)} />;

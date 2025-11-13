@@ -7,15 +7,9 @@ interface JotformPageProps {
 
 const JotformPage: React.FC<JotformPageProps> = ({ onBack }) => {
   useEffect(() => {
-    // Meta Pixel: Rastreia um PageView para esta página virtual.
-    // O código base do pixel já foi inicializado no App.tsx.
-    if (window.fbq) {
-      window.fbq('track', 'PageView');
-    }
-
     const scriptId = 'jotform-script';
 
-    // Evita adicionar o script se ele já existir
+    // Avoid adding the script if it already exists
     if (document.getElementById(scriptId)) {
       return;
     }
@@ -33,7 +27,7 @@ const JotformPage: React.FC<JotformPageProps> = ({ onBack }) => {
     }
 
     return () => {
-      // Limpeza na desmontagem do componente
+      // Cleanup on component unmount
       const jotformScript = document.getElementById(scriptId);
       if (jotformScript) {
         jotformScript.remove();
