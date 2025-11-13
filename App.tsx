@@ -1,64 +1,16 @@
-// src/App.tsx
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
-import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
-import JotformPage from './components/JotformPage';
-
-// --- INÍCIO DO CÓDIGO DO PIXEL ---
-// Estende a interface da janela para incluir o fbq para o TypeScript
-declare global {
-    interface Window {
-        fbq: any;
-        _fbq: any;
-    }
-}
-
-const PIXEL_ID = '1912501926344949'; // SEU ID DO PIXEL joaodecorOFICIAL
-
-const useMetaPixel = () => {
-  useEffect(() => {
-    // Evita que o script seja adicionado múltiplas vezes
-    if (window.fbq) return;
-
-    (function(f: any, b: Document, e: string, v: string, n?: any, t?: any, s?: any) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode!.insertBefore(t, s);
-    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-    window.fbq('init', PIXEL_ID);
-    window.fbq('track', 'PageView');
-  }, []); // O array vazio [] garante que este código rode apenas uma vez
-};
-// --- FIM DO CÓDIGO DO PIXEL ---
-
+import { ShieldIcon, HomeIcon, FileTextIcon, MapIcon, ClockIcon, UserIcon, WhatsAppIcon, MapPinIcon, MessageSquareIcon, LightbulbIcon, DollarSignIcon } from './components/Icons';
+import Obrigado from './pages/Obrigado';
 
 const App: React.FC = () => {
-    const [showForm, setShowForm] = useState(false);
-    
-    useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
-
-    if (showForm) {
-        return <JotformPage onBack={() => setShowForm(false)} />;
+    if (typeof window !== 'undefined' && window.location.pathname === '/obrigado') {
+        return <Obrigado />;
     }
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
-            {/* O componente do Pixel foi removido daqui e agora é chamado pela função 'useMetaPixel()' acima */}
             <main>
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-12 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
@@ -248,13 +200,43 @@ const App: React.FC = () => {
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
-                             <button
-                                onClick={() => setShowForm(true)}
-                                className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
-                            >
-                                <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
-                            </button>
+                            <form className="space-y-6" action="https://formsubmit.co/joaoluisxavierjr@gmail.com" method="POST">
+                                <input type="hidden" name="_next" value={`${typeof window !== 'undefined' ? window.location.origin : ''}/obrigado`} />
+                                <input type="hidden" name="_subject" value="Novo Lead da Landing Page Pro!" />
+                                <input type="hidden" name="_captcha" value="false" />
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="relative">
+                                        <UserIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
+                                        <input type="text" name="nome" placeholder="Seu nome" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
+                                    </div>
+                                    <div className="relative">
+                                        <WhatsAppIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
+                                        <input type="tel" name="whatsapp" placeholder="Seu melhor WhatsApp" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
+                                    </div>
+                                    <div className="relative">
+                                        <MapPinIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
+                                        <input type="text" name="cidade" placeholder="Cidade" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
+                                    </div>
+                                    <div className="relative">
+                                        <HomeIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
+                                        <input type="text" name="bairro" placeholder="Bairro" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
+                                    </div>
+                                </div>
+                                 <div className="relative">
+                                    <MessageSquareIcon className="w-5 h-5 text-gray-500 absolute top-5 left-4" />
+                                    <textarea name="ambiente" placeholder="Qual ambiente da sua casa mais te incomoda hoje?" rows={3} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition"></textarea>
+                                </div>
+                                <button type="submit" className="w-full bg-lime-400 text-black font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
+                                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                                    <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
+                                </button>
+                            </form>
+                             <div className="text-center mt-6">
+                                <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
+                                    <MessageSquareIcon className="w-5 h-5" />
+                                    <span>Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
