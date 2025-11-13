@@ -212,9 +212,8 @@ const App: React.FC = () => {
                         </div>
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
-                             <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
                             
-                            <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="block w-full bg-lime-400 text-black font-bold text-sm md:text-base text-center py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
+                            <a href="/cadastro" className="block w-full bg-lime-400 text-black font-bold text-sm md:text-base text-center py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
                                  <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
                                 <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
                             </a>
