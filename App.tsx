@@ -5,9 +5,9 @@ import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
 import JotformPage from './components/JotformPage';
-import ThanksPage from './components/ThanksPage';
 
 // --- INÍCIO DO CÓDIGO DO PIXEL ---
+// Estende a interface da janela para incluir o fbq para o TypeScript
 declare global {
     interface Window {
         fbq: any;
@@ -15,10 +15,11 @@ declare global {
     }
 }
 
-const PIXEL_ID = '1912501926344949';
+const PIXEL_ID = '1912501926534949'; // SEU ID DO PIXEL joaodecorOFICIAL (ATUALIZADO)
 
 const useMetaPixel = () => {
   useEffect(() => {
+    // Evita que o script seja adicionado múltiplas vezes
     if (window.fbq) return;
 
     (function(f: any, b: Document, e: string, v: string, n?: any, t?: any, s?: any) {
@@ -41,48 +42,33 @@ const useMetaPixel = () => {
 
     window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
-  }, []);
+  }, []); // O array vazio [] garante que este código rode apenas uma vez
 };
 // --- FIM DO CÓDIGO DO PIXEL ---
 
+
 const App: React.FC = () => {
-    const [path, setPath] = useState(window.location.pathname);
+    const [showForm, setShowForm] = useState(false);
     
-    useMetaPixel();
+    useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
 
-    const navigate = (newPath: string) => {
-        window.history.pushState({}, '', newPath);
-        setPath(newPath);
-    };
-
+    // Efeito para rastrear a conversão de 'Lead' na página de agradecimento
     useEffect(() => {
-        const onLocationChange = () => {
-            setPath(window.location.pathname);
-        };
-        window.addEventListener('popstate', onLocationChange);
-        
-        // Handle redirect from Jotform (?page=thanks)
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('page') === 'thanks') {
-            window.history.replaceState({}, '', '/obrigado');
-            setPath('/obrigado');
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('page') === 'thanks') {
+            if (window.fbq) {
+                window.fbq('track', 'Lead');
+            }
         }
+    }, []); // Roda apenas uma vez quando o componente é montado
 
-        return () => {
-            window.removeEventListener('popstate', onLocationChange);
-        };
-    }, []);
-
-    if (path === '/cadastro') {
-        return <JotformPage onBack={() => navigate('/')} />;
-    }
-
-    if (path === '/obrigado') {
-        return <ThanksPage onBack={() => navigate('/')} />;
+    if (showForm) {
+        return <JotformPage onBack={() => setShowForm(false)} />;
     }
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
+            {/* O componente do Pixel foi removido daqui e agora é chamado pela função 'useMetaPixel()' acima */}
             <main>
                 {/* Seção 1: A Promessa */}
                 <section className="text-center py-12 md:py-20 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/80 via-zinc-950 to-zinc-950">
@@ -273,7 +259,7 @@ const App: React.FC = () => {
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
                              <button
-                                onClick={() => navigate('/cadastro')}
+                                onClick={() => setShowForm(true)}
                                 className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
                             >
                                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
