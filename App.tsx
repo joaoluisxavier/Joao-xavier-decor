@@ -5,10 +5,9 @@ import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
 import JotformPage from './components/JotformPage';
-import ThanksPage from './components/ThanksPage'; // Importa a nova página
+import ThanksPage from './components/ThanksPage';
 
 // --- INÍCIO DO CÓDIGO DO PIXEL ---
-// Estende a interface da janela para incluir o fbq para o TypeScript
 declare global {
     interface Window {
         fbq: any;
@@ -16,11 +15,10 @@ declare global {
     }
 }
 
-const PIXEL_ID = '1912501926344949'; // SEU ID DO PIXEL joaodecorOFICIAL
+const PIXEL_ID = '1912501926344949';
 
 const useMetaPixel = () => {
   useEffect(() => {
-    // Evita que o script seja adicionado múltiplas vezes
     if (window.fbq) return;
 
     (function(f: any, b: Document, e: string, v: string, n?: any, t?: any, s?: any) {
@@ -43,34 +41,45 @@ const useMetaPixel = () => {
 
     window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
-  }, []); // O array vazio [] garante que este código rode apenas uma vez
+  }, []);
 };
 // --- FIM DO CÓDIGO DO PIXEL ---
 
-type Page = 'main' | 'form' | 'thanks';
-
 const App: React.FC = () => {
-    const [currentPage, setCurrentPage] = useState<Page>('main');
+    const [path, setPath] = useState(window.location.pathname);
     
-    useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
+    useMetaPixel();
+
+    const navigate = (newPath: string) => {
+        window.history.pushState({}, '', newPath);
+        setPath(newPath);
+    };
 
     useEffect(() => {
-        // Detecta a página a ser exibida a partir do parâmetro na URL
+        const onLocationChange = () => {
+            setPath(window.location.pathname);
+        };
+        window.addEventListener('popstate', onLocationChange);
+        
+        // Handle redirect from Jotform (?page=thanks)
         const urlParams = new URLSearchParams(window.location.search);
-        const page = urlParams.get('page');
-        if (page === 'thanks') {
-            setCurrentPage('thanks');
+        if (urlParams.get('page') === 'thanks') {
+            window.history.replaceState({}, '', '/obrigado');
+            setPath('/obrigado');
         }
+
+        return () => {
+            window.removeEventListener('popstate', onLocationChange);
+        };
     }, []);
 
-    if (currentPage === 'form') {
-        return <JotformPage onBack={() => setCurrentPage('main')} />;
+    if (path === '/cadastro') {
+        return <JotformPage onBack={() => navigate('/')} />;
     }
 
-    if (currentPage === 'thanks') {
-        return <ThanksPage onBack={() => setCurrentPage('main')} />;
+    if (path === '/obrigado') {
+        return <ThanksPage onBack={() => navigate('/')} />;
     }
-
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
@@ -264,7 +273,7 @@ const App: React.FC = () => {
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
                              <button
-                                onClick={() => setCurrentPage('form')}
+                                onClick={() => navigate('/cadastro')}
                                 className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
                             >
                                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
