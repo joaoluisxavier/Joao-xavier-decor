@@ -1,9 +1,10 @@
 // src/App.tsx
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { HomeIcon, FileTextIcon, ClockIcon, LightbulbIcon } from './components/Icons';
+import JotformPage from './components/JotformPage';
 
 // --- INÍCIO DO CÓDIGO DO PIXEL ---
 // Estende a interface da janela para incluir o fbq para o TypeScript
@@ -47,8 +48,13 @@ const useMetaPixel = () => {
 
 
 const App: React.FC = () => {
+    const [showForm, setShowForm] = useState(false);
     
     useMetaPixel(); // <-- CHAMADA DA FUNÇÃO DO PIXEL AQUI
+
+    if (showForm) {
+        return <JotformPage onBack={() => setShowForm(false)} />;
+    }
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
@@ -242,15 +248,13 @@ const App: React.FC = () => {
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
-                             <a 
-                                href="https://submit.jotform.com/253156169630054" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
+                             <button
+                                onClick={() => setShowForm(true)}
                                 className="block w-full bg-lime-400 text-black text-center font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
                             >
                                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
                                 <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </section>
