@@ -1,13 +1,26 @@
+
 import React from 'react';
 import { SolutionCard } from './components/SolutionCard';
 import { ProjectCard } from './components/ProjectCard';
 import { ShieldIcon, HomeIcon, FileTextIcon, MapIcon, ClockIcon, UserIcon, WhatsAppIcon, MapPinIcon, MessageSquareIcon, LightbulbIcon, DollarSignIcon } from './components/Icons';
 import Obrigado from './pages/Obrigado';
+import Cadastro from './pages/Cadastro';
+import Agradecimento from './pages/Agradecimento';
 
 const App: React.FC = () => {
-    if (typeof window !== 'undefined' && window.location.pathname === '/obrigado') {
-        return <Obrigado />;
+    if (typeof window !== 'undefined') {
+        const { pathname } = window.location;
+        if (pathname === '/obrigado') {
+            return <Obrigado />;
+        }
+        if (pathname === '/cadastro') {
+            return <Cadastro />;
+        }
+        if (pathname === '/agradecimento') {
+            return <Agradecimento />;
+        }
     }
+
 
     return (
         <div className="bg-zinc-950 text-gray-200 min-h-screen">
@@ -200,37 +213,12 @@ const App: React.FC = () => {
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
-                            <form className="space-y-6" action="https://formsubmit.co/joaoluisxavierjr@gmail.com" method="POST">
-                                <input type="hidden" name="_next" value={`${typeof window !== 'undefined' ? window.location.origin : ''}/obrigado`} />
-                                <input type="hidden" name="_subject" value="Novo Lead da Landing Page Pro!" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="relative">
-                                        <UserIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="nome" placeholder="Seu nome" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <WhatsAppIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="tel" name="whatsapp" placeholder="Seu melhor WhatsApp" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <MapPinIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="cidade" placeholder="Cidade" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <HomeIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="bairro" placeholder="Bairro" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                </div>
-                                 <div className="relative">
-                                    <MessageSquareIcon className="w-5 h-5 text-gray-500 absolute top-5 left-4" />
-                                    <textarea name="ambiente" placeholder="Qual ambiente da sua casa mais te incomoda hoje?" rows={3} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition"></textarea>
-                                </div>
-                                <button type="submit" className="w-full bg-lime-400 text-black font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
-                                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                    <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
-                                </button>
-                            </form>
+                            
+                            <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="block w-full bg-lime-400 text-black font-bold text-sm md:text-base text-center py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
+                                 <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                                <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
+                            </a>
+
                              <div className="text-center mt-6">
                                 <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
                                     <MessageSquareIcon className="w-5 h-5" />
