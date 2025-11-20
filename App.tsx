@@ -225,41 +225,19 @@ const App: React.FC = () => {
 
                         <div className="mt-16 bg-black p-8 sm:p-12 rounded-lg border border-gray-800">
                              <h3 className="text-2xl font-bold text-center mb-8 text-white">Sim, quero agendar meu diagnóstico!</h3>
-                            <form className="space-y-6" action="https://formsubmit.co/joaoluisxavierjr@gmail.com" method="POST">
-                                <input type="hidden" name="_next" value={`${typeof window !== 'undefined' ? window.location.origin : ''}/obrigado`} />
-                                <input type="hidden" name="_subject" value="Novo Lead da Landing Page Pro!" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="relative">
-                                        <UserIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="nome" placeholder="Seu nome" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <WhatsAppIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="tel" name="whatsapp" placeholder="Seu melhor WhatsApp" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <MapPinIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="cidade" placeholder="Cidade" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                    <div className="relative">
-                                        <HomeIcon className="w-5 h-5 text-gray-500 absolute top-1/2 left-4 transform -translate-y-1/2" />
-                                        <input type="text" name="bairro" placeholder="Bairro" required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition" />
-                                    </div>
-                                </div>
-                                 <div className="relative">
-                                    <MessageSquareIcon className="w-5 h-5 text-gray-500 absolute top-5 left-4" />
-                                    <textarea name="ambiente" placeholder="Qual ambiente da sua casa mais te incomoda hoje?" rows={3} required className="w-full bg-zinc-900 border-gray-700 rounded-md p-3 pl-12 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition"></textarea>
-                                </div>
-                                <button type="submit" className="w-full bg-lime-400 text-black font-bold text-sm md:text-base py-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group">
-                                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                    <span className="relative">SIM, QUERO AGENDAR MEU DIAGNÓSTICO E GARANTIR MINHA VAGA!</span>
-                                </button>
-                            </form>
-                             <div className="text-center mt-6">
-                                <a href="https://wa.me/555192427079" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 transition-colors">
-                                    <MessageSquareIcon className="w-5 h-5" />
-                                    <span>Prefere agendar pelo WhatsApp? Clique aqui e fale comigo agora.</span>
+                             <div className="text-center">
+                                <p className="text-gray-400 mb-8 text-base md:text-lg">
+                                    Clique no botão abaixo para iniciar uma conversa direta no WhatsApp e garantir sua vaga agora mesmo.
+                                </p>
+                                <a 
+                                    href="https://wa.me/555192427079?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20meu%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20e%20garantir%20minha%20vaga%21" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="w-full flex items-center justify-center gap-3 bg-lime-400 text-black font-bold text-sm md:text-base py-5 px-4 rounded-lg hover:bg-lime-300 transition-all transform hover:scale-[1.03] shadow-lg shadow-lime-400/30 hover:shadow-lime-300/40 relative overflow-hidden group"
+                                >
+                                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white/20 rounded-full group-hover:w-64 group-hover:h-64 opacity-10"></span>
+                                    <WhatsAppIcon className="w-6 h-6" />
+                                    <span className="relative uppercase">CHAMAR NO WHATSAPP AGORA</span>
                                 </a>
                             </div>
                         </div>
